@@ -6,7 +6,13 @@ export function formatTimeDifference(timeDiff: number): string {
     return `${seconds}s`;
   }
   if (hours === 0) {
-    return `${hours}h, ${minutes}m, ${seconds}s`;
+    return `${minutes}m, ${seconds}s`;
   }
   return `${hours}h, ${minutes}m, ${seconds}s`;
+}
+
+export function getToday(): string {
+  const today = new Date();
+  const formattedDate = today.toISOString().slice(0, 10);
+  return formattedDate;
 }
