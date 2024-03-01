@@ -1,15 +1,15 @@
 import * as vscode from 'vscode';
 import { formatTimeDifference } from './utils';
 
-let myStatusBarItem: vscode.StatusBarItem;
+let timeSpentIcon: vscode.StatusBarItem;
 
 export function activate({ subscriptions }: vscode.ExtensionContext) {
-  myStatusBarItem = vscode.window.createStatusBarItem(
+  timeSpentIcon = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Left,
     Number.MIN_SAFE_INTEGER,
   );
   updateStatusBarItem();
-  myStatusBarItem.show();
+  timeSpentIcon.show();
 }
 
 function updateStatusBarItem(): void {
@@ -18,7 +18,7 @@ function updateStatusBarItem(): void {
   setInterval(() => {
     const currentTime = Date.now();
     const diffTime = currentTime - initTime;
-    myStatusBarItem.text = `$(timeline-open) Today: ${formatTimeDifference(
+    timeSpentIcon.text = `$(timeline-open) Today: ${formatTimeDifference(
       diffTime,
     )}`;
   }, 1000);

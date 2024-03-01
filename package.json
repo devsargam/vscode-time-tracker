@@ -11,14 +11,6 @@
   ],
   "activationEvents": ["onStartupFinished"],
   "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "time-spent.showSelectionCount",
-        "title": "Hello World"
-      }
-    ]
-  },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
