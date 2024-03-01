@@ -9,12 +9,12 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["onStartupFinished"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "time-spent.helloWorld",
+        "command": "time-spent.showSelectionCount",
         "title": "Hello World"
       }
     ]
